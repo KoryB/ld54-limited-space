@@ -8,10 +8,38 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Guest",
+"language": "GDScript",
+"path": "res://scene/guest/guest.gd"
+}, {
+"base": "Node2D",
+"class": "Seat",
+"language": "GDScript",
+"path": "res://scene/table/seat.gd"
+}, {
+"base": "Node2D",
+"class": "TableWithSeats",
+"language": "GDScript",
+"path": "res://scene/table/table_with_seats.gd"
+} ]
+_global_script_class_icons={
+"Guest": "",
+"Seat": "",
+"TableWithSeats": ""
+}
+
 [application]
 
 config/name="LD54 - Limited Space"
+run/main_scene="res://level/TestLevel.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/height=768
+window/size/resizable=false
 
 [gui]
 
