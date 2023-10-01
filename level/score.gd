@@ -5,6 +5,8 @@ extends Label
 # var a = 2
 # var b = "text"
 
+var score = 0.0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var score := 0.0
+	score = 0.0
 	
 	for table in get_node("%Tables").get_children():
 		score += table.calculate_score()

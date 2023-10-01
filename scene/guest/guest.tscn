@@ -55,6 +55,7 @@ input_pickable = false
 shape = SubResource( 2 )
 
 [node name="PreferenceGui" parent="." instance=ExtResource( 5 )]
+visible = false
 modulate = Color( 1, 1, 1, 0.666667 )
 guest_path = NodePath("..")
 preferences_path = NodePath("../Preferences")

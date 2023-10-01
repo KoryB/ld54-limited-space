@@ -75,8 +75,13 @@ _global_script_class_icons={
 [application]
 
 config/name="LD54 - Limited Space"
-run/main_scene="res://level/TestLevel.tscn"
+run/main_scene="res://level/Start.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameManager="*res://scene/manager/game_manager.gd"
+BackgroundMusic="*res://scene/manager/background_music.tscn"
 
 [display]
 
@@ -114,4 +119,5 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.4, 0.317647, 0.129412, 1 )
 environment/default_environment="res://default_env.tres"

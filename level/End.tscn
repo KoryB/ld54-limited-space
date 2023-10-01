@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://level/end_score.gd" type="Script" id=1]
+[ext_resource path="res://scene/guest/gui/data/font_data.tres" type="DynamicFontData" id=2]
+[ext_resource path="res://level/end_background.png" type="Texture" id=3]
+[ext_resource path="res://level/end_button.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 72
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 768.0
+texture = ExtResource( 3 )
+
+[node name="Score" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 64.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 1 )
+text = "Final Score: 200"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Score"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 384.0
+custom_fonts/font = SubResource( 2 )
+text = "Thank you for playing!!"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Score/Label"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = 56.0
+margin_right = 192.0
+margin_bottom = 134.0
+custom_fonts/font = SubResource( 3 )
+text = "Try Again?"
+icon_align = 1
+script = ExtResource( 4 )
