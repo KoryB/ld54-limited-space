@@ -1,24 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/table/table_with_seats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/guest/guest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/manager/guest_manager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level/score.gd" type="Script" id=4]
 [ext_resource path="res://scene/tools/camera/GameCamera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/guest/gui/data/font_data.tres" type="DynamicFontData" id=6]
+[ext_resource path="res://scene/guest/gui/data/preference_stylebox.tres" type="StyleBox" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 6 )
 
 [node name="TestLevel" type="Node2D"]
-
-[node name="GameCamera" parent="." instance=ExtResource( 5 )]
-
-[node name="Score" type="Label" parent="GameCamera"]
-margin_left = -512.0
-margin_top = -384.0
-margin_right = -337.0
-margin_bottom = -325.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="GuestManager" parent="." instance=ExtResource( 3 )]
 tables_path = NodePath("../Tables")
@@ -35,3 +29,19 @@ unique_name_in_owner = true
 
 [node name="Guest" parent="Guests" instance=ExtResource( 2 )]
 position = Vector2( 232, 148 )
+
+[node name="GameCamera" parent="." instance=ExtResource( 5 )]
+
+[node name="Score" type="Label" parent="GameCamera"]
+margin_left = -512.0
+margin_top = -384.0
+margin_right = -337.0
+margin_bottom = -325.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = ExtResource( 7 )
+align = 1
+valign = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}

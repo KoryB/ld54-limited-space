@@ -16,7 +16,9 @@ radius = 16.0
 
 [node name="Guest" type="Node2D"]
 script = ExtResource( 3 )
+guest_name = "Hectorina III"
 color = Color( 0.788235, 0.176471, 0.176471, 1 )
+walk_speed = 64.0
 
 [node name="Preferences" type="Node" parent="."]
 
@@ -54,4 +56,5 @@ shape = SubResource( 2 )
 
 [node name="PreferenceGui" parent="." instance=ExtResource( 5 )]
 modulate = Color( 1, 1, 1, 0.666667 )
+guest_path = NodePath("..")
 preferences_path = NodePath("../Preferences")

@@ -12,4 +12,4 @@ func _ready():
 
 
 func calculate_score(other_guests: Neighbors) -> float:
-	return 1.0
+	return 100.0

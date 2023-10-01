@@ -8,4 +8,4 @@ func _ready():
 
 
 func calculate_score(guests: Array) -> float:
-	return 1.0
+	return -1.0

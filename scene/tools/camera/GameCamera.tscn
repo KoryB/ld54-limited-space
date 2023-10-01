@@ -16,6 +16,7 @@ should_invert = true
 current = true
 
 [node name="DragArea" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 2 )
 is_global = false
 action_name = "pan_click"

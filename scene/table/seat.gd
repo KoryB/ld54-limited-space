@@ -24,6 +24,7 @@ func occupy(guest: Guest):
 	
 	self.is_occupied = true
 	self.occupant = guest
+	self.occupant.is_seated = true
 	
 	self.occupant.connect("pressed", self, "forget_occupant")
 
@@ -31,6 +32,9 @@ func occupy(guest: Guest):
 
 
 func forget_occupant():
+	if self.occupant != null:
+		self.occupant.is_seated = false
+		
 	self.is_occupied = false
 	self.occupant = null
 	
