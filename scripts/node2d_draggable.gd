@@ -15,6 +15,7 @@ func _ready():
 	$DragArea.connect("pressed", self, "on_press")
 	$DragArea.connect("dragged", self, "on_drag")
 	$DragArea.connect("released", self, "on_release")
+	$DragArea.connect("clicked", self, "on_click")
 	
 
 func on_press(mouse_position: Vector2):
@@ -34,3 +35,7 @@ func on_release():
 	is_dragging = false
 	
 	emit_signal("released")
+	
+
+func on_click():
+	pass

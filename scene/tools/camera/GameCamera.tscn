@@ -18,8 +18,7 @@ current = true
 [node name="DragArea" type="Area2D" parent="."]
 script = ExtResource( 2 )
 is_global = false
-button_index = 2
+action_name = "pan_click"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea"]
-visible = false
 shape = SubResource( 1 )
