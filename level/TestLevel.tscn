@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/table/table_with_seats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/guest/guest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/manager/guest_manager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level/score.gd" type="Script" id=4]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -19,3 +20,8 @@ position = Vector2( 492, 239 )
 
 [node name="Guest" parent="Guests" instance=ExtResource( 2 )]
 position = Vector2( 232, 148 )
+
+[node name="Score" type="Label" parent="."]
+margin_right = 175.0
+margin_bottom = 59.0
+script = ExtResource( 4 )
