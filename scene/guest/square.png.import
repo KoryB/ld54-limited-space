@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/label_background.png-47e9c985ab439df4734e7677e11e9216.stex"
+path="res://.import/square.png-88de1ed8f285fbba2ed9c35463d55fd1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/guest/gui/label_background.png"
-dest_files=[ "res://.import/label_background.png-47e9c985ab439df4734e7677e11e9216.stex" ]
+source_file="res://scene/guest/square.png"
+dest_files=[ "res://.import/square.png-88de1ed8f285fbba2ed9c35463d55fd1.stex" ]
 
 [params]
 
