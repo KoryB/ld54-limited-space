@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	var score := 0.0
 	
-	for table in get_node("../Tables").get_children():
+	for table in get_node("%Tables").get_children():
 		score += table.calculate_score()
 		
 	self.text = "Score: " + str(score)
