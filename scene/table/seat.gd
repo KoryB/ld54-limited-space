@@ -33,6 +33,7 @@ func occupy(guest: Guest):
 
 func forget_occupant():
 	if self.occupant != null:
+		self.occupant.disconnect("pressed", self, "forget_occupant")
 		self.occupant.is_seated = false
 		
 	self.is_occupied = false

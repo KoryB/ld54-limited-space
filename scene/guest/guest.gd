@@ -58,6 +58,9 @@ func _process(delta: float):
 				
 				if (self.position - walk_target).length() < 2.0:
 					enter_wait()
+					
+		if should_show_gui():
+			self.get_parent().move_child(self, self.get_parent().get_child_count() - 1)
 
 
 func calculate_score(neighbors: Neighbors) -> float:
@@ -105,7 +108,7 @@ func update_sprite():
 		$Sprite/Circle.visible = true
 	elif shape_type == ShapeType.SQUARE:
 		$Sprite/Square.visible = true
-	elif shape_type == ShapeType.Triangle:
+	elif shape_type == ShapeType.TRIANGLE:
 		$Sprite/Triangle.visible = true
 		
 	$Sprite.modulate = color

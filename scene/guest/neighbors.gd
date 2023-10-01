@@ -25,4 +25,4 @@ func get_across():
 	if all.size() == 0:
 		return null
 	else:
-		return all[all.size() / 2 + 1]
+		return all[all.size() / 2]

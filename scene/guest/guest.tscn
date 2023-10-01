@@ -17,8 +17,8 @@ radius = 16.0
 [node name="Guest" type="Node2D"]
 script = ExtResource( 3 )
 guest_name = "Hectorina III"
-color = Color( 0.788235, 0.176471, 0.176471, 1 )
-walk_speed = 64.0
+color = Color( 0.176471, 0.788235, 0.788235, 1 )
+walk_time_max = 5.0
 
 [node name="Preferences" type="Node" parent="."]
 
@@ -26,7 +26,7 @@ walk_speed = 64.0
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Node2D" parent="."]
-modulate = Color( 0.788235, 0.176471, 0.176471, 1 )
+modulate = Color( 0.176471, 0.788235, 0.788235, 1 )
 
 [node name="Circle" type="Sprite" parent="Sprite"]
 texture = ExtResource( 1 )

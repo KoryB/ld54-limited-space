@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scene/guest/guest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://level/Template.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/table/table_with_seats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/guest/preference/preference_across.gd" type="Script" id=4]
+[ext_resource path="res://scene/guest/preference/preference_want_specific.gd" type="Script" id=5]
+[ext_resource path="res://scene/guest/preference/preference_neighbor_any.gd" type="Script" id=6]
+
+[node name="Level" instance=ExtResource( 2 )]
+
+[node name="TableWithSeats" parent="Tables" index="0" instance=ExtResource( 3 )]
+position = Vector2( 512, 384 )
+
+[node name="Husband0" parent="Guests" index="0" instance=ExtResource( 1 )]
+position = Vector2( 114, 279 )
+color = Color( 0.713726, 0.176471, 0.788235, 1 )
+
+[node name="Node" parent="Guests/Husband0/Preferences" index="0"]
+script = ExtResource( 5 )
+text = "I want to sit by my Husband!"
+preference_path = NodePath("../../../Husband1")
+scale = 100.0
+baseline = 0.0
+
+[node name="Sprite" parent="Guests/Husband0" index="1"]
+modulate = Color( 0.713726, 0.176471, 0.788235, 1 )
+
+[node name="Husband1" parent="Guests" index="1" instance=ExtResource( 1 )]
+position = Vector2( 87, 332 )
+shape_type = 1
+color = Color( 0.713726, 0.176471, 0.788235, 1 )
+
+[node name="Node" parent="Guests/Husband1/Preferences" index="0"]
+script = ExtResource( 5 )
+text = "I want to sit by my Husband!"
+preference_path = NodePath("../../../Husband0")
+scale = 100.0
+baseline = 0.0
+
+[node name="Sprite" parent="Guests/Husband1" index="1"]
+modulate = Color( 0.713726, 0.176471, 0.788235, 1 )
+
+[node name="Circle" parent="Guests/Husband1/Sprite" index="0"]
+visible = false
+
+[node name="Square" parent="Guests/Husband1/Sprite" index="1"]
+visible = true
+
+[node name="BrotherToHusband1" parent="Guests" index="2" instance=ExtResource( 1 )]
+position = Vector2( 825, 324 )
+shape_type = 1
+color = Color( 0.72549, 0.788235, 0.176471, 1 )
+
+[node name="Node" parent="Guests/BrotherToHusband1/Preferences" index="0"]
+script = ExtResource( 4 )
+text = "I want to sit across from my brother..."
+preference_path = NodePath("../../../Husband1")
+scale = 200.0
+baseline = -100.0
+
+[node name="Sprite" parent="Guests/BrotherToHusband1" index="1"]
+modulate = Color( 0.72549, 0.788235, 0.176471, 1 )
+
+[node name="Circle" parent="Guests/BrotherToHusband1/Sprite" index="0"]
+visible = false
+
+[node name="Square" parent="Guests/BrotherToHusband1/Sprite" index="1"]
+visible = true
+
+[node name="Loner" parent="Guests" index="3" instance=ExtResource( 1 )]
+position = Vector2( 64, 705 )
+shape_type = 2
+color = Color( 0.788235, 0.176471, 0.176471, 1 )
+
+[node name="Node" parent="Guests/Loner/Preferences" index="0"]
+script = ExtResource( 6 )
+text = "I really just want to by alone"
+scale = -100.0
+baseline = 200.0
+
+[node name="Sprite" parent="Guests/Loner" index="1"]
+modulate = Color( 0.788235, 0.176471, 0.176471, 1 )
+
+[node name="Circle" parent="Guests/Loner/Sprite" index="0"]
+visible = false
+
+[node name="Triangle" parent="Guests/Loner/Sprite" index="2"]
+visible = true
+
+[node name="Submit" parent="GameCamera/VBoxContainer" index="1"]
+next_level = "res://level/End.tscn"
+
+[editable path="Guests/Husband0"]
+[editable path="Guests/Husband1"]
+[editable path="Guests/BrotherToHusband1"]
+[editable path="Guests/Loner"]
